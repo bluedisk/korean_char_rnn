@@ -6,6 +6,11 @@
 https://github.com/rhobot/Hangulpy에서folk한 한글 관련 분해/조합 코드
 오토마타, 문장 분리 코드 추가
 
+한 글자의 음소 분리 후 모양새는 다음과 같습니다.
+[초성] [중성] [종성] [음절구문문자] 
+ex: 안녕하세요? => ㅇㅏㄴᴥㄴㅕㅇᴥㅎㅏᴥㅅㅔᴥㅇㅛᴥ?
+(음절 구분 문자는 단지 글자가 귀여워서  ᴥ 를 사용 했습니다.)
+
 ## char_rnn_test.ipynb
 테스트용 코드 (내부에 Hangulpy.py 로딩처리 추가)
 
@@ -18,11 +23,11 @@ data/origin/*.txt를 모두 처리 후 data/conv/*.txt로 저장
 추측 확률이 0.8 이하일 경우 확장자에 ".notsure"추가 
 
 ## deparse.py
-형태소 조합 테스트를 위해서 배열에 있는 형태소 묶음을 조합해서 출력하는 코드
+음소 조합 테스트를 위해서 배열에 있는 음소 묶음을 조합해서 출력하는 코드
 Hangulpy의존
 
 ## parse.py
-input.txt 파일을 형태소로 분리해주는 코드 /data/conv/*.txt 모두 읽어서 분리후 출력
+input.txt 파일을 음소로 분리해주는 코드 /data/conv/*.txt 모두 읽어서 분리후 출력
 Hangulpy의존
 
 ## train.py
@@ -37,9 +42,9 @@ data/origin/*.txt 로 저장 ( 2처리 후 삭제 했음)
 python conv2utf8.py
 data/conv/*.txt 로 컨버팅됨. ( 3처리 후 conv.zip으로 압축 처리했음)
 
-## 3. 형태소 분리
+## 3. 음소 분리
 python parse.py > data/index.txt
-data/conv/*.txt를 모두 읽어서 형태소 분리, 한글+라틴 외에 삭제 후 출력하는 코드
+data/conv/*.txt를 모두 읽어서 음소 분리, 한글+라틴 외에 삭제 후 출력하는 코드
 stdout으로 출력하는 형태로 파일 저장을 위해서
 linux shell의 output redirection을 써서 data/index.txt으로 저장.
 
