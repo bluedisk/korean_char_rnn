@@ -3,8 +3,8 @@
 
 # 0. 파일 설명
 ## Hangulpy/Hangulpy.py
-github에서 folk한 한글 관련 분해/조합 코드
-folk후 오토마타, 문장 분리 코드 추가
+https://github.com/rhobot/Hangulpy에서folk한 한글 관련 분해/조합 코드
+오토마타, 문장 분리 코드 추가
 
 ## char_rnn_test.ipynb
 테스트용 코드 (내부에 Hangulpy.py 로딩처리 추가)
