@@ -18,8 +18,12 @@ def conv_file(fromfile, tofile):
         print "WARNING! Unknown encoding! : %s = %s" % (fromfile, pred['encoding'])
         pred['encoding'] = "CP949" # 못찾으면 기본이 CP949
 
+	formfile = fromfile + ".unknown"
+
     elif pred['confidence'] < 0.9:
         print "WARNING! Unsured encofing! : %s = %s / %s" % (fromfile, pred['confidence'], pred['encoding'])
+
+	formfile = fromfile + ".notsure"
 
     with codecs.open(fromfile, "r", encoding=pred['encoding'], errors="ignore") as f:
         with codecs.open(tofile, "w+", encoding="utf8") as t:
