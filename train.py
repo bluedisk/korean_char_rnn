@@ -131,7 +131,7 @@ print ("data_loader.chars looks like \n%s. " % (data_loader.chars,))
 
 # In[ ]:
 
-rnn_size   = 128
+rnn_size   = 1024
 num_layers = 2
 grad_clip  = 5.
 
@@ -160,7 +160,7 @@ def loop(prev, _):
     prev_symbol = tf.stop_gradient(tf.argmax(prev, 1))
     return tf.nn.embedding_lookup(embedding, prev_symbol)
 # Output of RNN
-outputs, last_state = seq2seq.rnn_decoder(inputs, initial_state, cell, loop_function=loop, scope='rnnlm')
+outputs, last_state = seq2seq.rnn_decoder(inputs, initial_state, cell, loop_function=None, scope='rnnlm')
 output = tf.reshape(tf.concat(1, outputs), [-1, rnn_size])
 logits = tf.nn.xw_plus_b(output, softmax_w, softmax_b)
 # Next word probability
