@@ -1,9 +1,13 @@
-# char_rnn_ari
+# korean char rnn
+Implementation of Character Recussive Nueral Network 
 한글 Character RNN 구현
 
 # 파일 설명
 ## Hangulpy/Hangulpy.py
-https://github.com/rhobot/Hangulpy에서folk한 한글 관련 분해/조합 코드
+forked from https://github.com/rhobot/Hangulpy for Discompose Korean Text to list of Phoneme.
+Also I had implement Automata for Composing phonemes to Text. Because Manipulated outputs by rnn are not perfect set of phonemes for each korean characters or It could be a emoticon text.
+
+https://github.com/rhobot/Hangulpy 에서folk한 한글 관련 분해/조합 코드
 오토마타, 문장 분리 코드 추가
 
 한 글자의 음소 분리 후 모양새는 다음과 같습니다.
