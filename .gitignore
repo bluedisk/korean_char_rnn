@@ -65,3 +65,4 @@ target/
 # Data & Save
 data/
 save/
+logs/
